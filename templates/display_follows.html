@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      Result page
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class = "jumbotron">
+      <div class = "container">
+        <h3> Here is the latest {{ limit }} people that {{ user }} is following </h3>
+        <hr>
+        {% for each_following in followlist %}
+          <h5>Username: {{ each_following.name }}</h45>
+          <h5>Follow date: {{ each_following.date }} </h5>
+          <hr>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
