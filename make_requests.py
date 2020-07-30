@@ -3,7 +3,7 @@ from twitch import TwitchClient
 
 def get_follows(limit, user):
     limit = int(limit)
-    client = TwitchClient(secrets.Client_ID)
+    client = TwitchClient("1gbdfa6ouso61j5tz6pootbzyfs3ho")
     users = client.users.translate_usernames_to_ids([user])
     follow_list = []
     for user in users:
