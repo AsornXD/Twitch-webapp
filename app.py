@@ -6,7 +6,7 @@ app = Flask(__name__)
 def index():
     return render_template("index.html")
 
-@app.route("/submit")
+@app.route("/submit/followlist")
 def submit():
     user_limit = request.values.get("limit")
     user_user = request.values.get("user")
