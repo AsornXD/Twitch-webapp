@@ -27,6 +27,13 @@ def submittop():
     get_top = make_requests.get_topgames(limit2)
     return render_template("displaytop.html", gamelist = get_top, this_limit = limit2)
 
+@app.route("/submit/searchchannel")
+def submitchannel():
+    channel_query = request.values.get("my_channel_query")
+    channel_limit = request.values.get("my_channel_limit")
+    get_channels = make_requests.get_channels(channel_query, channel_limit)
+    return render_template("display_channel.html", channellist = get_channels, this_channel_limit = channel_limit, this_channel_query = channel_query)
+
 app.config['TEMPLATED_AUTO_RELOAD'] = True
 if __name__ == "__main__":
     app.run(host = "127.0.0.1", port = 5000, debug= True, use_reloader = False)

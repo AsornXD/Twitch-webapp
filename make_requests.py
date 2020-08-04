@@ -25,3 +25,7 @@ def check_if_subscribed(user, channel):
 def get_topgames(templimit):
     client = TwitchClient(os.environ['CLIENT_ID'])
     return client.games.get_top(int(templimit))
+
+def get_channels(search_query, search_limit):
+    client = TwitchClient(os.environ['CLIENT_ID'])
+    return client.search.channels(search_query, limit = int(search_limit))
