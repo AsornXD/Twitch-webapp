@@ -3,7 +3,6 @@ from twitch import TwitchClient
 from riotwatcher import LolWatcher
 client = TwitchClient(os.environ['CLIENT_ID'])
 LOL_watcher = LolWatcher(os.environ['RIOT_API_KEY'])
-print(LOL_watcher.league.by_summoner('na1' , LOL_watcher.summoner.by_name('na1', 'failnaught')['id']))
 
 def get_follows(limit, user):
     limit = int(limit)
