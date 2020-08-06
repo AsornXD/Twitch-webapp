@@ -34,6 +34,12 @@ def submitchannel():
     get_channels = make_requests.get_channels(channel_query, channel_limit)
     return render_template("display_channel.html", channellist = get_channels, this_channel_limit = channel_limit, this_channel_query = channel_query)
 
+@app.route("/submit/leaguestats")
+def submitlolstats():
+    this_league_username = request.values.get("my_league_username")
+    this_league_region = request.values.get("my_league_region")
+    return render_template("display_league_stats.html", league_stats = make_requests.get_league_stats(this_league_username, this_league_region), league_username = this_league_username, league_region = this_league_region)
+
 app.config['TEMPLATED_AUTO_RELOAD'] = True
 if __name__ == "__main__":
     app.run(host = "127.0.0.1", port = 5000, debug= True, use_reloader = False)

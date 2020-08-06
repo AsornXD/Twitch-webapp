@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>
+      Result page
+    </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class = "jumbotron">
+      <div class = "container">
+        <h3> Here are {{ league_username }}'s stats in {{ league_region }} </h3>
+        <hr>
+        {% for each_stats in league_stats %}
+          <h5> Mode: {{ each_stats.queueType }} </h5>
+          <h5> Rank: {{ each_stats.tier }} {{ each_stats.rank }} </h5>
+          <h5> LP: {{ each_stats.leaguePoints }} </h5>
+          <h5> Wins: {{each_stats.wins}} </h5>
+          <h5> Losses: {{ each_stats.losses }} </h5>
+        {% endfor %}
+        <hr>
+      </div>
+    </div>
+  </body>
+</html>
